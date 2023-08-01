@@ -1,0 +1,17 @@
+# Use the official PostgreSQL image as the base image
+FROM postgres:15
+
+# Environment variables to configure PostgreSQL
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=1234
+ENV POSTGRES_DB=lrecruit
+
+# Optionally, you can expose the PostgreSQL port (5432) to allow connections from outside the container
+EXPOSE 5432
+
+# You can also specify any additional configuration, initialization scripts, or data backup files you want to copy to the container
+# For example, to copy a custom configuration file:
+# COPY ./postgresql.conf /etc/postgresql/postgresql.conf
+
+# CMD instruction runs the PostgreSQL server when the container starts
+CMD ["postgres"]
